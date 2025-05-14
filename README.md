@@ -1,73 +1,73 @@
-# Algorithmes de Recherche et de Tri
+# Search and Sorting Algorithms
 
-Ce repository contient une série d'algorithmes que j'ai explorés et testés aujourd'hui. Il inclut des techniques de recherche et des algorithmes de tri, implémentés en JavaScript. Chaque algorithme a été conçu pour tester des scénarios spécifiques, optimiser la recherche de paires, effectuer des tris efficaces, et bien plus encore.
+This repository contains a collection of algorithms I explored and tested today. It includes both search techniques and sorting algorithms, implemented in JavaScript. Each algorithm was designed to solve specific problems, optimize pair searches, perform efficient sorting, and more.
 
-## Algorithmes explorés
+## Explored Algorithms
 
-### **Sujet 1 : Recherche de Paires avec une Somme Spécifique (findK)**
+### **Topic 1: Pair Search with a Specific Sum (findK)**
 
-**But :**  
-Trouver si deux éléments dans un tableau donnent une somme égale à une valeur `k`.
+**Goal:**  
+Determine if two elements in an array sum up to a given value `k`.
 
-**Problématique :**  
-On vous donne une liste de nombres entiers relatifs et un nombre `k`. Il s'agit de créer une méthode retournant un booléen qui indique si deux nombres de cette liste ont pour somme le nombre `k`.
+**Problem:**  
+Given a list of integers and a number `k`, write a function that returns a boolean indicating whether any two numbers in the list add up to `k`.
 
-**Exemples :**
+**Examples:**
 
-- Si on donne la liste `[10, 15, 3, 7]` et `k = 17`, la fonction doit retourner `true` car `10 + 7 = 17`.
-- Si on donne la liste `[1, 8, 10, 21]` et `k = 19`, la fonction doit retourner `false` car il n'y a pas deux nombres ayant 19 comme somme.
+- For the list `[10, 15, 3, 7]` and `k = 17`, the function should return `true` because `10 + 7 = 17`.
+- For the list `[1, 8, 10, 21]` and `k = 19`, the function should return `false` because no two numbers add up to 19.
 
-**Algorithme :**  
-Utilisation d'un `Set` pour enregistrer les éléments déjà vus et vérifier si la complémentaire de l'élément actuel existe dans le `Set`. Si oui, l'algorithme retourne `true`, sinon il continue.
+**Algorithm:**  
+Use a `Set` to keep track of the numbers already seen, and for each element, check whether its complement (i.e., `k - current number`) exists in the set. If it does, return `true`, otherwise continue.
 
-**Complexité :**  
-O(n), un seul passage sur le tableau avec des opérations en temps constant pour chaque élément.
-
----
-
-### **Sujet 2 : Immeubles avec Vue sur le Soleil Couchant (sortByHigh)**
-
-**But :**  
-Trouver combien de bâtiments dans une rue ont au moins un appartement avec une vue sur le soleil couchant (à l'ouest). Chaque immeuble est représenté par sa hauteur en étages dans une liste.
-
-**Problématique :**  
-Avec une liste contenant la hauteur (en étages) des immeubles d’une rue, d’est en ouest, un agent immobilier voudrait déterminer combien de bâtiments ont au moins un appartement avec une vue sur le soleil couchant.
-
-**Exemples :**
-
-- Avec la liste `[3, 7, 8, 3, 6, 1]`, la fonction devrait retourner `3`, puisque les immeubles de hauteur `8`, `6`, et `1` ont tous une vue à l’ouest.
-- Avec la liste `[1, 4, 5, 8]`, la fonction devrait retourner `1`, car seul l’immeuble de hauteur `8` a une vue.
-
-**Algorithme :**  
-Parcours du tableau de droite à gauche pour déterminer si un immeuble a une vue sur le coucher du soleil. Utilisation d'un `maxHigh` pour garder une trace de la hauteur maximale rencontrée jusqu'à ce point.
-
-**Complexité :**  
-O(n), un seul passage sur le tableau.
+**Complexity:**  
+O(n), a single pass through the array with constant-time operations for each element.
 
 ---
 
-## Objectifs et Tests
+### **Topic 2: Buildings with Sunset Views (sortByHigh)**
 
-Aujourd'hui, j'ai testé plusieurs algorithmes dans le but de :
+**Goal:**  
+Count how many buildings on a street have at least one apartment with a sunset view (west-facing). Each building is represented by its height in a list.
 
-- **Optimiser la recherche de paires** dans un tableau de manière efficace, avec une complexité linéaire.
-- **Comprendre comment implémenter un algorithme de tri** pour déterminer les bâtiments avec vue sur le coucher du soleil en utilisant une méthode simple et rapide.
+**Problem:**  
+Given a list of building heights (from east to west), a real estate agent wants to determine how many buildings have at least one west-facing apartment with a view of the sunset.
 
-### **Tests réalisés :**
+**Examples:**
 
-- **Sujet 1 :**  
-  J'ai testé l'algorithme `findK` avec différents tableaux et valeurs de `k` pour vérifier la précision de la détection de paires qui s'ajoutent à une somme donnée.
+- For the list `[3, 7, 8, 3, 6, 1]`, the function should return `3`, because buildings with heights `8`, `6`, and `1` all have a sunset view.
+- For the list `[1, 4, 5, 8]`, the function should return `1`, as only the building with height `8` has a view.
+
+**Algorithm:**  
+Traverse the list from right to left and use a `maxHeight` variable to keep track of the tallest building seen so far. A building has a sunset view if it is taller than all buildings to its right.
+
+**Complexity:**  
+O(n), a single pass through the array.
+
+---
+
+## Goals and Testing
+
+Today I tested several algorithms with the following goals:
+
+- **Optimize pair searching** in an array efficiently using linear time complexity.
+- **Understand how to implement a sorting-based algorithm** to detect buildings with sunset views using a clean and fast method.
+
+### **Tests Performed:**
+
+- **Topic 1:**  
+  I tested the `findK` algorithm with different arrays and `k` values to check how accurately it detects pairs that sum up to a given value.
   
-- **Sujet 2 :**  
-  J'ai testé le tri des immeubles pour déterminer si l'algorithme identifiait correctement ceux ayant une vue sur le coucher de soleil.
+- **Topic 2:**  
+  I tested the building view detection logic to verify if it correctly identifies all buildings with a sunset view.
 
 ---
 
 ## Installation
 
-Pour tester les algorithmes, suivez ces étapes :
+To test the algorithms, follow these steps:
 
-1. Clonez le repository sur votre machine locale :
+1. Clone the repository to your local machine:
 
    ```bash
-   git clone https://github.com/ton-utilisateur/ton-repository.git
+   git clone https://github.com/your-username/your-repository.git
